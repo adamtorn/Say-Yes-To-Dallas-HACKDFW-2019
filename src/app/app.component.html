@@ -1,20 +1,57 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+        <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"><img src="http://2q2gfd1oppbw3cwrb21r6wky.wpengine.netdna-cdn.com/wp-content/uploads/2017/01/SayYestoDallas_logo3.png" width="77.25" height="52" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>-->
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+                <a class="nav-link" href="#">Official Website</a>
+                <a class="nav-link" href="#">Dallas Regional Chamber</a>
+          </form>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+        <h1 class="mt-5">Reasons why you should say YES to Dallas:</h1>
+        <div class="card mb-3 mt-3 text-white bg-dark" style="max-width: 100%;">
+                <div class="row">
+                  <div class="col-md-6" id="back-img">
+                    <img *ngIf="facts" src="{{facts[currentTab.toString()].picURL}}" class="card-img" style="background-size:cover">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title" *ngIf="facts">{{facts[currentTab.toString()].title}}</h5>
+                      <p class="card-text" *ngIf="facts">{{facts[currentTab.toString()].description}}</p>
+                      <p class="card-text" *ngIf="facts"><small class="text-muted">Source: {{facts[currentTab.toString()].source}}</small></p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="btn btn-dark text-white mx-1" (click)="clickPrevious()" *ngIf="currentTab!=1">Previous</a></li>
+            <li class="page-item"><a class="btn btn-dark text-white" (click)="clickNext()" *ngIf="currentTab!=maxTabs">Next</a></li>
+          </ul>
+        </nav>
 
+        <h4>Useful Links:</h4>
+        <ul>
+          <li><h5><a href="https://www.visitdallas.com/things-to-do/events/index.html">Events in Dallas</a></h5></li>
+          <li><h5><a href="http://sayyestodallas.com/jobs/">Jobs</a></h5></li>
+          <li><h5><a href="https://www.visitdallas.com/tourism/index.html">Tourism</a></h5></li>
+        </ul>
+      </div>
+    </main>

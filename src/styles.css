@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+    padding: 60px 15px 0;
+  }
+  
+  /* .footer {
+    background-color: grey;
+  } */
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  code {
+    font-size: 80%;
+  }
+
+  /* #back-img{
+    background-image: url(https://f9prodcdn.azureedge.net/media/3658/dfw.jpg);
+    background-size: cover;
+  } */
